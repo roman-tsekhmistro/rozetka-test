@@ -1,0 +1,585 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ковдра FINE DREAM SUMMER</title>
+    <link href="./assets/styles/index.css" rel="stylesheet" />
+  </head>
+
+  <style>
+    /** @format */
+    @import './variables.css';
+    @import url(https://fonts.googleapis.com/css?family=Russo+One:regular);
+
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Russo One';
+    }
+
+    .hero__section {
+      background-color: var(--blue-bg);
+      padding: 70px 130px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: -2;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 1180px;
+      margin: 0 auto;
+      padding: 0 50px;
+      position: relative;
+    }
+
+    .logo {
+      max-height: 200px;
+      max-width: 200px;
+    }
+
+    .hero__section:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../images/stars.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .hero__header {
+      display: flex;
+      align-items: center;
+    }
+
+    .hero__header img {
+      width: 100%;
+    }
+
+    .hero__title {
+      text-align: center;
+      font-size: 45px;
+      color: var(--white-text-color);
+      z-index: 100;
+      letter-spacing: 2px;
+      margin-left: 15rem;
+    }
+
+    .hero__title--span {
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    .hero__image {
+      max-width: 100%;
+    }
+
+    .hero__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      list-style: none;
+      color: var(--white-text-color);
+      margin-top: 90px;
+    }
+
+    .hero__list--item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      max-width: 460px;
+      font-size: 600;
+    }
+
+    .hero__list--footer {
+      display: flex;
+      gap: 20px;
+      align-items: self-end;
+      margin-top: 20px;
+    }
+
+    .hero__list--footer img {
+      max-height: 75px;
+    }
+
+    .hero__list--footer p {
+      padding-bottom: 20px;
+    }
+
+    .list__item--header {
+      font-size: 25px;
+    }
+
+    .list__item--text {
+      font-size: 18px;
+    }
+
+    .list__item--footer img {
+      max-height: 70px;
+    }
+
+    .list__item--footer p {
+      padding-bottom: 10px;
+    }
+
+    .compound__section {
+      padding: 100px 0;
+    }
+
+    .titles__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: absolute;
+      right: 50px;
+      top: 225px;
+      height: 38vh;
+    }
+
+    .compound__title {
+      font-size: 30px;
+      text-align: right;
+      max-width: 250px;
+    }
+
+    .details__list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+    }
+
+    .details__list--item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 55px;
+    }
+
+    .item__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-weight: 700;
+    }
+
+    .item__heading {
+      color: var(--orange-text-color);
+      font-size: 30px;
+    }
+
+    .item__text {
+      font-size: 18px;
+    }
+
+    .comparison__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 45px;
+      background-color: var(--blue-bg);
+      padding: 80px 50px;
+      color: var(--white-text-color);
+      background-image: url('../images/footer-bg.svg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .comparison__section--title {
+      text-transform: uppercase;
+      font-size: 47px;
+    }
+
+    .comparison__section--table {
+      display: flex;
+      gap: 100px;
+    }
+
+    .comparison__article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .article__title {
+      font-size: 25px;
+      margin: 40px 0;
+    }
+
+    .article__list {
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .article__list.without-headers > .article__list--item {
+      margin-top: 55px;
+    }
+
+    .article__list--item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .list__item--heading {
+      color: var(--orange-text-color);
+      font-size: 27px;
+    }
+
+    .list__item--params {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 520px;
+      height: 80px;
+      background-color: var(--orange-text-color);
+      border-radius: 5px;
+      padding: 35px 60px;
+      font-size: 24px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 550px;
+    }
+
+    .footer__header {
+      padding-top: 120px;
+      text-align: center;
+      font-size: 51px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 467px) {
+      .hero__header {
+        gap: 20px;
+        flex-direction: column;
+      }
+
+      .hero__title {
+        margin-left: 0;
+        font-size: 27px;
+      }
+
+      .logo {
+        max-height: 50px;
+        max-width: 50px;
+      }
+
+      .container {
+        width: 380px;
+        padding: 20px;
+      }
+
+      .hero__section {
+        padding: 0;
+      }
+
+      .hero__image {
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .hero__list {
+        margin-top: 40px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        align-items: center;
+        align-self: center;
+      }
+
+      .hero__list--item {
+        max-width: 300px;
+      }
+
+      .list__item--header {
+        font-size: 18px;
+      }
+
+      .list__item--text {
+        font-size: 16px;
+      }
+
+      .hero__list--footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero__list--footer img {
+        height: 50px;
+      }
+
+      .compound__img,
+      .titles__wrapper {
+        display: none;
+      }
+
+      .mobile__compound {
+        display: flex;
+      }
+
+      .titles__wrapper--mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .compound__title--mobile {
+        margin-left: -140px;
+      }
+
+      .compound__title--mobile.first {
+        margin-top: -45px;
+      }
+
+      .compound__title--mobile.second {
+        margin-bottom: 10px;
+      }
+
+      .details__list {
+        gap: 40px;
+      }
+
+      .details__list--item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .details__list--item.reverse {
+        flex-direction: column-reverse;
+      }
+
+      .details__list--item img {
+        width: 250px;
+      }
+
+      .comparison__section {
+        padding: 40px 0;
+      }
+
+      .comparison__section--title,
+      .comparison__section--table {
+        display: none;
+      }
+
+      .footer {
+        height: 200px;
+      }
+
+      .footer__header {
+        font-size: 31px;
+        padding: 0;
+      }
+    }
+
+    @media screen and (min-width: 467px) {
+      .mobile__compound {
+        display: none;
+      }
+    }
+  </style>
+  <body>
+    <section class="hero__section">
+      <div class="container">
+        <header class="hero__header">
+          <img src="./assets/images/Logo.svg" alt="Logo" class="logo" />
+          <h1 class="hero__title">
+            <span class="hero__title--span">КОВДРА</span> <br />
+            FINE DREAM SUMMER
+          </h1>
+        </header>
+        <img
+          src="./assets/images/bet-sheets.svg"
+          alt="bet-sheets"
+          class="hero__image"
+        />
+        <ul class="hero__list">
+          <li class="hero__list--item">
+            <h3 class="list__item--header">Наповнювач:</h3>
+            <p class="list__item--text">
+              антиалергійне 100% силіконове волокно
+            </p>
+          </li>
+          <li class="hero__list--item">
+            <h3 class="list__item--header">Тканина чохла:</h3>
+            <p class="list__item--text">мікрофібра</p>
+          </li>
+          <li class="hero__list--footer">
+            <img src="./assets/images/check.svg" alt="check icon" />
+            <p>Висока якість</p>
+          </li>
+          <li class="hero__list--footer">
+            <img src="./assets/images/feather.svg" alt="feather icon" />
+            <p>Гіпоалергенна</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="compound__section">
+      <div class="container">
+        <img
+          src="./assets/images/details.svg"
+          alt="details image"
+          class="compound__img"
+        />
+        <div class="titles__wrapper">
+          <h3 class="compound__title">Чохол з білої мікрофібри</h3>
+          <h3 class="compound__title">Хлопкопон</h3>
+        </div>
+        <div class="mobile__compound">
+          <img src="./assets/images/mobile-details.svg" alt="details image" />
+          <div class="titles__wrapper--mobile">
+            <h3 class="compound__title--mobile first">
+              Чохол з білої мікрофібри
+            </h3>
+            <h3 class="compound__title--mobile second">Хлопкопон</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="details__section">
+      <div class="container">
+        <ul class="details__list">
+          <li class="details__list--item">
+            <img
+              src="./assets/images/details-list-images/first.svg"
+              alt="Чохол з білої мікрофібри картинка"
+            />
+            <div class="item__info">
+              <h3 class="item__heading">Чохол з білої мікрофібри</h3>
+              <p class="item__text">
+                Міцна тканина, яка не тільки приємна на дотик, але й має
+                терморегулюючі властивості, що допомагають уникнути статичної
+                напруги.
+              </p>
+            </div>
+          </li>
+          <li class="details__list--item reverse">
+            <div class="item__info">
+              <h3 class="item__heading">Хлопкопон</h3>
+              <p class="item__text">
+                Силіконізоване волокно з щільністю 200 г/м2. Цей наповнювач
+                забезпечує м’якість і комфорт під час сну. Хлопкопон — це
+                сучасний матеріал зі штучних волокон, який має високу
+                еластичність і зберігає свою форму впродовж довгого періоду
+                часу. Крім того, він забезпечує оптимальну циркуляцію повітря,
+                що сприяє комфортній температурі під час сну.
+              </p>
+            </div>
+            <img
+              src="./assets/images/details-list-images/second.svg"
+              alt="Хлопкопон картинка"
+            />
+          </li>
+          <li class="details__list--item">
+            <img
+              src="./assets/images/details-list-images/third.svg"
+              alt="Ковдра стьобана картинка"
+            />
+            <div class="item__info">
+              <h3 class="item__heading">Ковдра стьобана</h3>
+              <p class="item__text">
+                Ковдра має стьобану лініями поверхню з малюнком тиснявою
+                “прямокутник”, що не лише зберігає форму виробу, але й надає
+                йому привабливий зовнішній вигляд.
+              </p>
+            </div>
+          </li>
+          <li class="details__list--item reverse">
+            <div class="item__info">
+              <h3 class="item__heading">
+                Оздоблена білим кантом Тік (коса бейка)
+              </h3>
+              <p class="item__text">
+                Це надає ковдрі привабливий зовнішній вигляд.
+              </p>
+            </div>
+            <img
+              src="./assets/images/details-list-images/fourth.svg"
+              alt="Оздоблена білим кантом Тік (коса бейка) картинка"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="comparison__section">
+      <h2 class="comparison__section--title">Таблиця порівняння</h2>
+
+      <div class="comparison__section--table">
+        <article class="comparison__article">
+          <img
+            class="article__img"
+            src="./assets/images/fine-dream-summer.svg"
+            alt=""
+          />
+          <h2 class="article__title">Fine Dream Summer</h2>
+          <ul class="article__list">
+            <li class="article__list--item">
+              <h3 class="list__item--heading">Розмір</h3>
+              <p class="list__item--params">
+                140х205 / 155х205 / 170х210 / 200х220 см
+              </p>
+            </li>
+            <li class="article__list--item">
+              <h3 class="list__item--heading">Тканина чохла</h3>
+              <p class="list__item--params">Мікрофібра</p>
+            </li>
+            <li class="article__list--item">
+              <h3 class="list__item--heading">Наповнення</h3>
+              <p class="list__item--params">Хлопкопон</p>
+            </li>
+          </ul>
+        </article>
+        <article class="comparison__article">
+          <img
+            class="article__img"
+            src="./assets/images/fine-ortick-spring.svg"
+            alt=""
+          />
+          <h2 class="article__title">Fine Ortick Spring</h2>
+          <ul class="article__list without-headers">
+            <li class="article__list--item">
+              <p class="list__item--params">
+                140х205 / 155х205 / 170х210 / 200х220 см
+              </p>
+            </li>
+            <li class="article__list--item">
+              <p class="list__item--params">Поліестер</p>
+            </li>
+            <li class="article__list--item">
+              <p class="list__item--params">Хлопкопон</p>
+            </li>
+          </ul>
+        </article>
+      </div>
+      <footer class="footer">
+        <h2 class="footer__header">
+          Здоровий сон починається з <br />
+          smart
+        </h2>
+      </footer>
+    </section>
+  </body>
+</html>

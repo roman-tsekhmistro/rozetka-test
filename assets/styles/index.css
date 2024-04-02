@@ -1,0 +1,389 @@
+/** @format */
+@import './variables.css';
+@import url(https://fonts.googleapis.com/css?family=Russo+One:regular);
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Russo One';
+}
+
+.hero__section {
+  background-color: var(--blue-bg);
+  padding: 70px 130px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: -2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1180px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
+
+.logo {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.hero__section:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../images/stars.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+  z-index: -1;
+}
+
+.hero__header {
+  display: flex;
+  align-items: center;
+}
+
+.hero__header img {
+  width: 100%;
+}
+
+.hero__title {
+  text-align: center;
+  font-size: 45px;
+  color: var(--white-text-color);
+  z-index: 100;
+  letter-spacing: 2px;
+  margin-left: 15rem;
+}
+
+.hero__title--span {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.hero__image {
+  max-width: 100%;
+}
+
+.hero__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  list-style: none;
+  color: var(--white-text-color);
+  margin-top: 90px;
+}
+
+.hero__list--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  max-width: 460px;
+  font-size: 600;
+}
+
+.hero__list--footer {
+  display: flex;
+  gap: 20px;
+  align-items: self-end;
+  margin-top: 20px;
+}
+
+.hero__list--footer img {
+  max-height: 75px;
+}
+
+.hero__list--footer p {
+  padding-bottom: 20px;
+}
+
+.list__item--header {
+  font-size: 25px;
+}
+
+.list__item--text {
+  font-size: 18px;
+}
+
+.list__item--footer img {
+  max-height: 70px;
+}
+
+.list__item--footer p {
+  padding-bottom: 10px;
+}
+
+.compound__section {
+  padding: 100px 0;
+}
+
+.titles__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 50px;
+  top: 225px;
+  height: 38vh;
+}
+
+.compound__title {
+  font-size: 30px;
+  text-align: right;
+  max-width: 250px;
+}
+
+.details__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.details__list--item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 700;
+}
+
+.item__heading {
+  color: var(--orange-text-color);
+  font-size: 30px;
+}
+
+.item__text {
+  font-size: 18px;
+}
+
+.comparison__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  background-color: var(--blue-bg);
+  padding: 80px 50px;
+  color: var(--white-text-color);
+  background-image: url('../images/footer-bg.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.comparison__section--title {
+  text-transform: uppercase;
+  font-size: 47px;
+}
+
+.comparison__section--table {
+  display: flex;
+  gap: 100px;
+}
+
+.comparison__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article__title {
+  font-size: 25px;
+  margin: 40px 0;
+}
+
+.article__list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article__list.without-headers > .article__list--item {
+  margin-top: 55px;
+}
+
+.article__list--item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list__item--heading {
+  color: var(--orange-text-color);
+  font-size: 27px;
+}
+
+.list__item--params {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 520px;
+  height: 80px;
+  background-color: var(--orange-text-color);
+  border-radius: 5px;
+  padding: 35px 60px;
+  font-size: 24px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 550px;
+}
+
+.footer__header {
+  padding-top: 120px;
+  text-align: center;
+  font-size: 51px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 467px) {
+  .hero__header {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .hero__title {
+    margin-left: 0;
+    font-size: 27px;
+  }
+
+  .logo {
+    max-height: 50px;
+    max-width: 50px;
+  }
+
+  .container {
+    width: 380px;
+    padding: 20px;
+  }
+
+  .hero__section {
+    padding: 0;
+  }
+
+  .hero__image {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .hero__list {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    align-self: center;
+  }
+
+  .hero__list--item {
+    max-width: 300px;
+  }
+
+  .list__item--header {
+    font-size: 18px;
+  }
+
+  .list__item--text {
+    font-size: 16px;
+  }
+
+  .hero__list--footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__list--footer img {
+    height: 50px;
+  }
+
+  .compound__img,
+  .titles__wrapper {
+    display: none;
+  }
+
+  .mobile__compound {
+    display: flex;
+  }
+
+  .titles__wrapper--mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .compound__title--mobile {
+    margin-left: -140px;
+  }
+
+  .compound__title--mobile.first {
+    margin-top: -45px;
+  }
+
+  .compound__title--mobile.second {
+    margin-bottom: 10px;
+  }
+
+  .details__list {
+    gap: 40px;
+  }
+
+  .details__list--item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .details__list--item.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .details__list--item img {
+    width: 250px;
+  }
+
+  .comparison__section {
+    padding: 40px 0;
+  }
+
+  .comparison__section--title,
+  .comparison__section--table {
+    display: none;
+  }
+
+  .footer {
+    height: 200px;
+  }
+
+  .footer__header {
+    font-size: 31px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 467px) {
+  .mobile__compound {
+    display: none;
+  }
+}
